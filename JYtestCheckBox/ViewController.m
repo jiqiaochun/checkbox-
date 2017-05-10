@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "JYTenQuestionsController.h"
+
 @interface ViewController ()
 
 @end
@@ -16,7 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+}
+
+- (void)btnClick:(UIButton *)sender{
+    JYTenQuestionsController *vc = [[JYTenQuestionsController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
